@@ -9,13 +9,13 @@ use ReflectionFunction;
 use ReflectionMethod;
 use ReflectionProperty;
 
-use const FILTER_VALIDATE_BOOLEAN;
-
-use function extension_loaded;
 use function array_merge;
 use function class_exists;
-use function ini_get;
+use function extension_loaded;
 use function filter_var;
+use function ini_get;
+
+use const FILTER_VALIDATE_BOOLEAN;
 
 /**
  * A reader for docblock annotations.
@@ -119,8 +119,10 @@ class AnnotationReader implements Reader
             throw AnnotationException::optimizerPlusSaveComments();
         }
 
-        if (extension_loaded('Zend OPcache') &&
-            filter_var(ini_get('opcache.save_comments'), FILTER_VALIDATE_BOOLEAN) === false) {
+        if (
+            extension_loaded('Zend OPcache') &&
+            filter_var(ini_get('opcache.save_comments'), FILTER_VALIDATE_BOOLEAN) === false
+        ) {
             throw AnnotationException::optimizerPlusSaveComments();
         }
 
