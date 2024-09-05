@@ -220,6 +220,28 @@ final class PsrCachedReaderTest extends AbstractReaderTest
         );
     }
 
+    public function testReaderDoesNotCacheIfFileDoesNotExistSoLastModificationCannotBeDetermined(): void
+    {
+        $code = <<<'EOS'
+namespace Doctrine\Tests\Common\Annotations;
+
+/**
+ * @\Doctrine\Tests\Common\Annotations\Fixtures\AnnotationTargetClass("Some data")
+ */
+class PsrCachedEvalClass {
+
+}
+EOS;
+
+        eval($code);
+
+        $reader = new PsrCachedReader(new AnnotationReader(), new ArrayAdapter(), true);
+        // @phpstan-ignore class.notFound
+        $readAnnotations = $reader->getClassAnnotations(new ReflectionClass(PsrCachedEvalClass::class));
+
+        self::assertCount(1, $readAnnotations);
+    }
+
     protected function doTestCacheStale(string $className, int $lastCacheModification): PsrCachedReader
     {
         $cacheKey = rawurlencode($className);
