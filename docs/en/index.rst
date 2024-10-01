@@ -11,7 +11,7 @@ We do not recommend using this library in new projects and encourage authors
 of downstream libraries to offer support for attributes as an alternative to
 Doctrine Annotations.
 
-Have a look at [our blog](https://www.doctrine-project.org/2022/11/04/annotations-to-attributes.html)
+Have a look at `our blog <https://www.doctrine-project.org/2022/11/04/annotations-to-attributes.html>`_
 to learn more.
 
 Introduction
@@ -66,7 +66,7 @@ looks like this:
 
 The annotation class is declared as an annotation by ``@Annotation``.
 
-:ref:`Read more about custom annotations. <custom>`
+:doc:`Read more about custom annotations. <custom>`
 
 Reading annotations
 ===================
@@ -95,7 +95,7 @@ annotations of a class. A common one is
 A reader has multiple methods to access the annotations of a class or
 function.
 
-:ref:`Read more about handling annotations. <annotations>`
+:doc:`Read more about handling annotations. <annotations>`
 
 IDE Support
 -----------
@@ -104,6 +104,3 @@ Some IDEs already provide support for annotations:
 
 - Eclipse via the `Symfony2 Plugin <https://github.com/pulse00/Symfony-2-Eclipse-Plugin>`_
 - PhpStorm via the `PHP Annotations Plugin <https://plugins.jetbrains.com/plugin/7320-php-annotations>`_ or the `Symfony Plugin <https://plugins.jetbrains.com/plugin/7219-symfony-support>`_
-
-.. _Read more about handling annotations.: annotations
-.. _Read more about custom annotations.: custom
