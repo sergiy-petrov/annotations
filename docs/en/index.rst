@@ -1,5 +1,8 @@
+Getting Started
+===============
+
 Deprecation notice
-==================
+------------------
 
 PHP 8 introduced `attributes
 <https://www.php.net/manual/en/language.attributes.overview.php>`_,
@@ -15,7 +18,7 @@ Have a look at `our blog <https://www.doctrine-project.org/2022/11/04/annotation
 to learn more.
 
 Introduction
-============
+------------
 
 Doctrine Annotations allows to implement custom annotation
 functionality for PHP classes and functions.
@@ -39,7 +42,7 @@ class mapping, but it can be used in other projects for other purposes
 too.
 
 Installation
-============
+------------
 
 You can install the Annotation component with composer:
 
@@ -48,7 +51,7 @@ You can install the Annotation component with composer:
     $ composer require doctrine/annotations
 
 Create an annotation class
-==========================
+--------------------------
 
 An annotation class is a representation of the later used annotation
 configuration in classes. The annotation class of the previous example
@@ -69,7 +72,7 @@ The annotation class is declared as an annotation by ``@Annotation``.
 :doc:`Read more about custom annotations. <custom>`
 
 Reading annotations
-===================
+-------------------
 
 The access to the annotations happens by reflection of the class or function
 containing them. There are multiple reader-classes implementing the
@@ -98,7 +101,7 @@ function.
 :doc:`Read more about handling annotations. <annotations>`
 
 IDE Support
------------
+^^^^^^^^^^^
 
 Some IDEs already provide support for annotations:
 
